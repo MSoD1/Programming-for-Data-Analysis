@@ -30,9 +30,4 @@ df['Frequency'] = np.random.randint(1,10 , dataset)
 df['Age'] = np.random.randint(18,70 , dataset)
 df.head()
 ````
-
-
-````
-df['Cost €'] = np.random.uniform(200.00, 1000.00 , dataset)
-df.head()
-````
+The final variable is *Cost*, which was dependant on *frequency* since the more frequently a respondent smoked the higher the cost. Based on frequency, a random number was generated within a range created within an If statement. Although the Cost variables appears as a float, using ``append`` has created a list variable. 
