@@ -1,6 +1,6 @@
 # Programming for Data Analysis - Project 1
 
-###  ***Requirement: *** 
+###  ***Requirement:*** 
 The task is to synthesize a dataset, based upon research of a real-world phenomenon.
 
 ### ***Overview***  
@@ -29,7 +29,7 @@ df.head()
 
 The variable *Cost*, was created based on a dependency to *frequency* since the more frequently a respondent smoked the higher the financial burden. An empty array was created and based on *frequency*, a random number was generated within a range using an If statement. A second numeric column *Salary* based again on *frequency* was created, the function *loc* used to select rows and columns by names/labels of pandas DataFrame. *Type* function was then used to give a summary of the columns created, Cost and Salary were then changed from a 64 to a 32 float to reduce memory usage. To reduce the number of decimal places, *apply()* function calls the *lambda* function and applies it to every row or column of the dataframe and returns a modified copy of the dataframe.
 
-``
+````
 cost = []
 for row in df['Frequency']:
         if row < 2 :    cost.append(float(np.random.uniform(10,20,1)))
@@ -37,10 +37,10 @@ for row in df['Frequency']:
         elif row < 6 : cost.append(float(np.random.uniform(41,60,1)))
         elif row < 8 :  cost.append(float(np.random.uniform(61,80,1)))        
         else:          cost.append(float(np.random.uniform(81,110,1)))
-``
+````
 
-``
+````
 df.loc[df['Frequency'] <= 5, 'Salary'] = df['Frequency']*df['Age']*100 
 df.loc[df['Frequency'] > 5, 'Salary'] = df['Frequency']*df['Age']*100 + df['Cost']*15
 df.head()
-``
+````
